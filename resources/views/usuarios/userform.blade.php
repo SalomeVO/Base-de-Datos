@@ -6,7 +6,9 @@
         <div class="col-md-7 mt-5">
 
             <div class="card">
-                <form action="" mathod="POST">
+                <form action="{{ url ('/save') }}" method="POST">
+                @csrf
+
                     <div class="card-header text-center">AGREGAR USUARIO</div>
 
                     <div class="card-body">
