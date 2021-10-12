@@ -18,7 +18,7 @@ class UserController extends Controller
 
         $validator = $this->validate($request, [
             'nombre'=> 'required|string|max:255',
-            'email' => 'string|max:255|email|unique:usuarios'
+            'email' => 'required|string|max:255|email|unique:usuarios'
         ]);
 
         $userdata = request()->except("_token");

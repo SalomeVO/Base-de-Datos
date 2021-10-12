@@ -37,7 +37,7 @@
 
                         <div class="row form-group">
                             <label for="" class="col-2">Email</label>
-                            <input type="text" name="Email" class="form-control col-md-9">
+                            <input type="text" name="email" class="form-control col-md-9">
                         </div>
 
                         <div class="row form-group">
