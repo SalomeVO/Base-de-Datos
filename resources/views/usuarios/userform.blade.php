@@ -1,9 +1,26 @@
 @extends('layouts.base')
 
-<div @class("container mt-5")>
+<div class="container mt-5">
 
     <div class="row justify-content-center">
         <div class="col-md-7 mt-5">
+        <!--Mensaje flash-->
+        @if(session("usuarioGuardado"))
+        <div class="alert alert-success">
+            {{session("usuarioGuardado")}}
+        </div>
+        @endif
+
+            <!--Validacion de errores-->
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
 
             <div class="card">
                 <form action="{{ url ('/save') }}" method="POST">

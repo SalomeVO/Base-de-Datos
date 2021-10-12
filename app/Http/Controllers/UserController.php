@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Usario;
+use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -16,9 +16,14 @@ class UserController extends Controller
     /** Guardar usuarios */
     public function save(Request $request){
 
+        $validator = $this->validate($request, [
+            'nombre'=> 'required|string|max:255',
+            'email' => 'string|max:255|email|unique:usuarios'
+        ]);
+
         $userdata = request()->except("_token");
         Usuario::insert($userdata);
 
-        return "Usuario Guardado";
+        return back()->with('usuarioGuardado', "Usuario Guardado");
     }
 }
