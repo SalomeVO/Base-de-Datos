@@ -23,3 +23,9 @@ Route::post('/save', 'UserController@save')-> name('save');
 
 //Eiminar usuarios
 Route::delete('/delete/{id}', 'UserController@delete')->name('delete');
+
+//Formulario para editar usuarios
+Route::get('/editform/{id}','UserController@editform')->name('editform');
+
+//Edición de usuarios
+Route::patch('/edit/{id}','UserController@edit')->name('edit');
