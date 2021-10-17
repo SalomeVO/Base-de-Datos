@@ -8,6 +8,13 @@ use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
+    /**Listado de usuarios*/
+    public function lista(){
+        $data['users'] = Usuario::paginate(3);
+
+        return view('usuarios.lista', $data);
+    }
+
     /** Formulario de usuario */
     public function userform(){
         return view('usuarios.userform');
