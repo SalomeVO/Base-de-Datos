@@ -20,3 +20,6 @@ Route::get('/form', 'UserController@userform');
 
 //Guardar usuarios
 Route::post('/save', 'UserController@save')-> name('save');
+
+//Eiminar usuarios
+Route::delete('/delete/{id}', 'UserController@delete')->name('delete');

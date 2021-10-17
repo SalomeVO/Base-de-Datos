@@ -10,6 +10,7 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Email</th>
+                    <th>Acciones</th>
                 </tr>
                 </thead>
 
@@ -18,6 +19,17 @@
                     <tr>
                         <td>{{$user->nombre}}</td>
                         <td>{{$user->email}}</td>
+                        <td>
+                            <form action="{{route('delete', $user->id)}}" method="POST">
+                                @csrf @method('DELETE')
+
+                                <button type="submit" onclick="return confirm('Seguro de eliminar usuario?')" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+
+                            </form>
+
+                        </td>
                     </tr>
                      @endforeach
 
