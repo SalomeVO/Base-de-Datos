@@ -17,6 +17,7 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Email</th>
+                    <th>Rol</th>
                     <th>Acciones</th>
                 </tr>
                 </thead>
@@ -26,20 +27,23 @@
                     <tr>
                         <td>{{$user->nombre}}</td>
                         <td>{{$user->email}}</td>
+                        <td>{{$user->descripcion}}</td><!--para la columna rol-->
                         <td>
-                            <a href="{{route('editform', $user->id)}}" class="btn btn-primary mb-2">
-                                <i class="fas fa-pencil-alt"></i>
-                            </a>
+                            <div class="btn-group"><!--Para que los bonotes esten a la par-->
 
-                            <form action="{{route('delete', $user->id)}}" method="POST">
-                                @csrf @method('DELETE')
+                                <a href="{{route('editform', $user->id)}}" class="btn btn-primary mb-3 mr-2">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
 
-                                <button type="submit" onclick="return confirm('¿Seguro de eliminar el usuario?')" class="btn btn-danger">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
+                                <form action="{{route('delete', $user->id)}}" method="POST">
+                                    @csrf @method('DELETE')
 
-                            </form>
+                                    <button type="submit" onclick="return confirm('¿Seguro de eliminar el usuario?')" class="btn btn-danger">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
 
+                                </form>
+                            </div>
                         </td>
                     </tr>
                      @endforeach

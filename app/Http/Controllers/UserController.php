@@ -5,21 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Rol; //la direccion
 use App\Usuario;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     /**Listado de usuarios*/
     public function lista(){
-        $data['users'] = Usuario::paginate(3);
 
-        /**$users = DB::table('usuarios')
-            ->join('rol','usuarios.rol_id','=')
+        $users = DB::table('usuarios')
+            ->join('rol','usuarios.rol_id','=','rol.id_rol')
             ->select('usuarios.*','rol.descripcion')
-            ->get();**/
+            ->paginate(5);
 
-        return view('usuarios.lista', $data);
+        return view('usuarios.lista', compact('users'));
     }
 
     /** Formulario de usuario */
