@@ -6,12 +6,18 @@ use App\Models\Rol; //la direccion
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     /**Listado de usuarios*/
     public function lista(){
         $data['users'] = Usuario::paginate(3);
+
+        /**$users = DB::table('usuarios')
+            ->join('rol','usuarios.rol_id','=')
+            ->select('usuarios.*','rol.descripcion')
+            ->get();**/
 
         return view('usuarios.lista', $data);
     }
@@ -28,11 +34,15 @@ class UserController extends Controller
 
         $validator = $this->validate($request, [
             'nombre'=> 'required|string|max:255',
-            'email' => 'required|string|max:255|email|unique:usuarios'
+            'email' => 'required|string|max:255|email|unique:usuarios',
+            'rol_id'=> 'required|string'
         ]);
 
-        $userdata = request()->except("_token");
-        Usuario::insert($userdata);
+         Usuario::create([
+             'nombre'=>$validator['nombre'],
+             'email'=>$validator['email'],
+             'rol_id'=>$validator['rol_id']
+         ]);
 
         return back()->with('usuarioGuardado', "Usuario Guardado");
     }

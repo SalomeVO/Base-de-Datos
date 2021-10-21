@@ -45,7 +45,7 @@
                             <div class="col-6 offset-3">
                                 <div class="form-group">
                                     <label>Rol</label>
-                                    <select name="rol" class="form-control" >
+                                    <select name="rol_id" class="form-control" >
                                         <option value="">--Seleccione--</option>
 
                                         @foreach( $rol as $roles)

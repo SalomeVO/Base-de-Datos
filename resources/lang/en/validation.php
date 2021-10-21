@@ -142,7 +142,11 @@ return [
             'max:255'=> 'Email muy largo',
             'email'=>'Formato incorrecto',
             'unique'=>'Email repetido'
-        ]
+        ],
+
+        'rol_id' => [
+            'required' => 'El rol es requerido',
+            ]
     ],
 
     /*
