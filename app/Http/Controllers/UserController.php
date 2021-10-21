@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rol; //la direccion
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -17,7 +18,9 @@ class UserController extends Controller
 
     /** Formulario de usuario */
     public function userform(){
-        return view('usuarios.userform');
+        /**se agrego para rol*/
+        $rol=Rol::all();
+        return view('usuarios.userform', compact('rol')); //para que se pueda visualizar
     }
 
     /** Guardar usuarios */
