@@ -40,6 +40,22 @@
                             <input type="text" name="email" class="form-control col-md-9" value="{{ $usuario->email }}">
                         </div>
 
+                        <!--rol vista-->
+                        <div class="row mb-3">
+                            <div class="col-6 offset-3">
+                                <div class="form-group">
+                                    <label>Rol</label>
+                                    <select name="rol_id" class="form-control" >
+                                        <option value="">--Seleccione--</option>
+
+                                        @foreach( $rol as $roles)
+                                            <option value="{{$roles->id_rol}}"> {{$roles->descripcion}}  </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row form-group">
                             <button type="submit" class="btn btn-success col-md-9 offset-2">Modificar</button>
                         </div>

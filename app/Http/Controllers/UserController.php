@@ -54,9 +54,13 @@ class UserController extends Controller
 
     /**Formulario para editar usuarios*/
     public function editform($id){
+
+        /**se agrego para rol*/
+        $rol=Rol::all();
+
         $usuario = Usuario::findOrFail($id);
 
-        return view('usuarios.editform', compact('usuario'));
+        return view('usuarios.editform', compact('usuario','rol'));
     }
 
     /**Edición de usuarios*/
