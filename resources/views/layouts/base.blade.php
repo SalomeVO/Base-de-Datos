@@ -13,10 +13,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!--Para agragar el icono de basurero-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-
 </head>
 
-<body>
-
-</body>
+    <body>
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="{{url('/')}}">Usuarios</a>
+        </nav>
+        <div class="container ">
+            @yield('content') <!-- es para que se herede en todas las plantillas-->
+        </div>
+    </body>
 </html>
