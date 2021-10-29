@@ -18,25 +18,25 @@
             <table class="table table-bordered table-striped text-center">
                 <thead>
                 <tr class="table-success">
-                    <th>Foto</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Rol</th>
-                    <th>Acciones</th>
+                    <th class="border border-dark" >Foto</th>
+                    <th class="border border-dark" >Nombre</th>
+                    <th class="border border-dark" >Email</th>
+                    <th class="border border-dark" >Rol</th>
+                    <th class="border border-dark" >Acciones</th>
                 </tr>
                 </thead>
 
                 <tbody>
                     @foreach($users as $user)
                     <tr>
-                        <td>
+                        <td class="border border-secondary" >
                             <!--para mandar a llamar la imagen-->
-                            <img src="{{ asset('storage').'/'.$user->imagenes}}" class="img-fluid img-thumbnail" width="80px">
+                            <img src="{{ asset('storage').'/'.$user->imagenes}}" class="img-fluid img-thumbnail"  width="70px">
                         </td>
-                        <td>{{$user->nombre}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->descripcion}}</td><!--para la columna rol-->
-                        <td>
+                        <td class="border border-secondary" >{{$user->nombre}}</td>
+                        <td class="border border-secondary" >{{$user->email}}</td>
+                        <td class="border border-secondary" >{{$user->descripcion}}</td><!--para la columna rol-->
+                        <td class="border border-secondary" >
                             <div class="btn-group"><!--Para que los bonotes esten a la par-->
 
                                 <a href="{{route('editform', $user->id)}}" class="btn btn-primary mb-3 mr-2">

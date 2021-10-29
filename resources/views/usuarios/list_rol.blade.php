@@ -9,16 +9,16 @@
                 <table class="table table-bordered table-striped text-center">
                     <thead>
                     <tr style="background-color: #9370D8;">
-                        <th>ID</th>
-                        <th>Descripcion</th>
+                        <th class="border border-dark" >ID</th>
+                        <th class="border border-dark" >Descripcion</th>
                     </tr>
                     </thead>
 
                     <tbody>
                     @foreach($rols as $rol)
                         <tr>
-                            <td>{{$rol->id_rol}}</td>
-                            <td>{{$rol->descripcion}}</td>
+                            <td class="border border-secondary" >{{$rol->id_rol}}</td>
+                            <td class="border border-secondary" >{{$rol->descripcion}}</td>
                         </tr>
                     @endforeach
 
