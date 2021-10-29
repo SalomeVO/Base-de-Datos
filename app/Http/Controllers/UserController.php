@@ -60,6 +60,7 @@ class UserController extends Controller
 
         /**para que borre en BD y en Codigo*/
         if (Storage::delete('public/'.$usuario->imagenes)){
+
             Usuario::destroy($id);
         }
 
