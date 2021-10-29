@@ -17,6 +17,7 @@
             <table class="table table-bordered table-striped text-center">
                 <thead>
                 <tr>
+                    <th>Foto</th>
                     <th>Nombre</th>
                     <th>Email</th>
                     <th>Rol</th>
@@ -27,6 +28,10 @@
                 <tbody>
                     @foreach($users as $user)
                     <tr>
+                        <td>
+                            <!--para mandar a llamar la imagen-->
+                            <img src="" class="img-fluid img-thumbnail" width="80px">
+                        </td>
                         <td>{{$user->nombre}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->descripcion}}</td><!--para la columna rol-->

@@ -70,4 +70,9 @@ class UserController extends Controller
 
         return back()->with('usuarioModificado','Usuario Modificado');
     }
+
+    /**Listado de lista rol*/
+    public function lista_rol(){
+        return view('usuarios.tabla_rol');
+    }
 }
