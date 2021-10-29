@@ -6,6 +6,7 @@ use App\Models\Rol; //la direccion
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -33,14 +34,22 @@ class UserController extends Controller
         $validator = $this->validate($request, [
             'nombre'=> 'required|string|max:255',
             'email' => 'required|string|max:255|email|unique:usuarios',
+            'imagenes'=>'required',  //para que se pueda guardar en imagenes
             'rol_id'=> 'required|string'
         ]);
 
-         Usuario::create([
-             'nombre'=>$validator['nombre'],
-             'email'=>$validator['email'],
-             'rol_id'=>$validator['rol_id']
-         ]);
+        /**condiciones para guardar imagenes*/
+
+        if($request->hasFile('imagenes')){
+            $validator['imagenes'] = $request-> file('imagenes')->store('imagen','public');
+        }
+
+        Usuario::create([
+            'nombre'=>$validator['nombre'],
+            'email'=>$validator['email'],
+            'imagenes'=>$validator['imagenes'],         /**para guardarlo*/
+            'rol_id'=>$validator['rol_id']
+        ]);
 
         return back()->with('usuarioGuardado', "Usuario Guardado");
     }

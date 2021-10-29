@@ -30,7 +30,7 @@
                     <tr>
                         <td>
                             <!--para mandar a llamar la imagen-->
-                            <img src="" class="img-fluid img-thumbnail" width="80px">
+                            <img src="{{ asset('storage').'/'.$user->imagenes}}" class="img-fluid img-thumbnail" width="80px">
                         </td>
                         <td>{{$user->nombre}}</td>
                         <td>{{$user->email}}</td>

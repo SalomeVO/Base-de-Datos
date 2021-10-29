@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 //Lista de usuarios
 Route::get('/', 'UserController@lista');
 
-//Lista de rol
-Route::get('/lista_rol', 'UserController@lista_rol');
-
 //Formulario
 Route::get('/form', 'UserController@userform');
 

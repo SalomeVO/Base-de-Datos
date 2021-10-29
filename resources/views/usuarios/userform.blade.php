@@ -24,7 +24,7 @@
         @endif
 
             <div class="card">
-                <form action="{{ url ('/save') }}" method="POST">
+                <form action="{{ url ('/save') }}" method="POST" enctype="multipart/form-data"><!--para que acepte imagenes-->
                 @csrf
 
                     <div class="card-header text-center">AGREGAR USUARIO</div>
@@ -39,6 +39,12 @@
                         <div class="row form-group">
                             <label for="" class="col-2">Email</label>
                             <input type="text" name="email" class="form-control col-md-9">
+                        </div>
+
+                        <!--para el formulario de imagenes-->
+                        <div class="row form-group">
+                            <label for="" class="col-2" >Imagen</label>
+                            <input type="file" name="imagenes" class="img-fluid">
                         </div>
 
                         <!--rol vista-->

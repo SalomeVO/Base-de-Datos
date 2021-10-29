@@ -143,6 +143,9 @@ return [
             'email'=>'Formato incorrecto',
             'unique'=>'Email repetido'
         ],
+        'imagenes' => [
+            'required' => 'La imagen es requerida',
+        ],
 
         'rol_id' => [
             'required' => 'El rol es requerido',
