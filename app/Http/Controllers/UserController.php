@@ -56,7 +56,12 @@ class UserController extends Controller
 
     /**Eliminar usuarios*/
     public function delete($id){
-        Usuario::destroy($id);
+        $usuario = Usuario::findOrFail($id); /**para buscar todos los datos */
+
+        /**para que borre en BD y en Codigo*/
+        if (Storage::delete('public/'.$usuario->imagenes)){
+            Usuario::destroy($id);
+        }
 
         return back()->with('usuarioEliminado', 'Usuario eliminado');
     }

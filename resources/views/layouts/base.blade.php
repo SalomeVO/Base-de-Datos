@@ -16,33 +16,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
 
-<body>
+    <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-p-3 mb-2 text-white" style="background-color: #BDB76B;">
-    <a class="navbar-brand" href="{{url('/')}}">CRUD Laravel</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <nav class="navbar navbar-expand-lg navbar-light bg-p-3 mb-2 text-white" style="background-color: #BDB76B;">
+            <a class="navbar-brand" href="{{url('/')}}">CRUD Laravel</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Tablas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{url('/')}}">Tabla usuario</a>
-                    <a class="dropdown-item" href="{{url('/')}}">Lista</a>
-                    <a class="dropdown-item" href="{{url('/form')}}">Agregar</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{url('/rol_ruta')}}">Tabla Rol</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="container ">
-@yield('content') <!-- es para que se herede en todas las plantillas-->
-</div>
-</body>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tablas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{url('/')}}">Tabla usuario</a>
+                            <a class="dropdown-item" href="{{url('/')}}">Lista</a>
+                            <a class="dropdown-item" href="{{url('/form')}}">Agregar</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{url('/rol_ruta')}}">Tabla Rol</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+       <div class="container ">
+          @yield('content') <!-- es para que se herede en todas las plantillas-->
+       </div>
+     </body>
 </html>
