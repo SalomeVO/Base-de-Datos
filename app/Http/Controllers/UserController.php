@@ -75,13 +75,18 @@ class UserController extends Controller
     /**Edición de usuarios*/
     public function edit(Request $request, $id){
         $datosUsuario = request()->except((['_token', '_method']));
+
+        /**para editar las imagenes*/
+        if($request->hasFile('imagenes')){
+
+            $usuario = Usuario::findOrFail($id);
+            Storage::delete('public/'.$usuario->imagenes);
+            $datosUsuario ['imagenes'] = $request-> file('imagenes')->store('imagen','public');
+        };
+
         Usuario::where('id', '=', $id)->update($datosUsuario);
 
         return back()->with('usuarioModificado','Usuario Modificado');
     }
 
-    /**Listado de lista rol*/
-    public function lista_rol(){
-        return view('usuarios.tabla_rol');
-    }
 }
