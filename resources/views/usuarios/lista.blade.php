@@ -1,4 +1,5 @@
 @extends('layouts.base')
+@section('title', 'Lista Usuario')
 @section('content')
 
 <div class="container mt-5">
@@ -16,7 +17,7 @@
 
             <table class="table table-bordered table-striped text-center">
                 <thead>
-                <tr>
+                <tr class="table-success">
                     <th>Foto</th>
                     <th>Nombre</th>
                     <th>Email</th>
