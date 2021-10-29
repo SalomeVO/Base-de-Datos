@@ -89,4 +89,11 @@ class UserController extends Controller
         return back()->with('usuarioModificado','Usuario Modificado');
     }
 
+    /**para hacer rol*/
+    public function rol_ruta(){
+        $data['rols'] = Rol::paginate(3);
+
+        return view('usuarios.list_rol', $data);
+    }
+
 }
