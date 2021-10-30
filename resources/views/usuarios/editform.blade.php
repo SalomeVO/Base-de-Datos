@@ -43,6 +43,7 @@
                             <!--para el formulario de imagenes-->
                             <div class="row form-group">
                                 <label for="" class="col-2">Imagen</label>
+                                <img src="{{ asset('storage').'/'.$usuario->imagenes}}" class="img-fluid img-thumbnail"  width="70px">
                                 <input type="file" name="imagenes" class="hidden" value="{{ $usuario->imagenes}}">
                             </div>
 
