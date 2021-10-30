@@ -16,7 +16,7 @@ class UserController extends Controller
         $users = DB::table('usuarios')
             ->join('rol','usuarios.rol_id','=','rol.id_rol')
             ->select('usuarios.*','rol.descripcion')
-            ->paginate(5);
+            ->paginate(4);
 
         return view('usuarios.lista', compact('users'));
     }
@@ -41,13 +41,13 @@ class UserController extends Controller
         /**condiciones para guardar imagenes*/
 
         if($request->hasFile('imagenes')){
-            $validator['imagenes'] = $request-> file('imagenes')->store('imagen','public');
+            $ver['imagenes'] = $request-> file('imagenes')->store('imagen','public');
         }
 
         Usuario::create([
             'nombre'=>$validator['nombre'],
             'email'=>$validator['email'],
-            'imagenes'=>$validator['imagenes'],         /**para guardarlo*/
+            'imagenes'=>$ver['imagenes'],         /**para guardarlo*/
             'rol_id'=>$validator['rol_id']
         ]);
 
